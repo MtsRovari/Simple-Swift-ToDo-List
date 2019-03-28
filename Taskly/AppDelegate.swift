@@ -2,11 +2,19 @@
 //  AppDelegate.swift
 //  Taskly
 //
-//  Created by Mateus Rovari on 22/03/19.
+//  Created by Mateus Rovari on 17/03/19.
 //  Copyright © 2019 Mateus Rovari. All rights reserved.
 //
 
 import UIKit
+
+extension UINavigationController {
+    
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Initialize TastStore
+        let taskStore = TaskStore()
+        
+//        let todoTask = [Task(name: "Meditate"), Task(name: "Buy Bananas"), Task(name: "Watch AAF"), Task(name: "Work"), Task(name: "Read a Book")]
+//        
+//        let doneTasks = [Task(name: "Watch Netflix"), Task(name: "Go to School")]
+//        
+//        taskStore.tasks = [todoTask, doneTasks]
+        
+        // Grab the TaskController
+        let taskController = window?.rootViewController?.children.first
+            as? TasksController
+        
+        // Set the TastStore accordingly
+        taskController?.taskStore = taskStore
+        
         return true
     }
 
