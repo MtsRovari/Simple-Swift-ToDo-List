@@ -24,7 +24,23 @@ class TasksController: UITableViewController {
         let alertController = UIAlertController(title: "Add Task", message: nil, preferredStyle: .alert)
         
         // Set up the actions
-        let addAction = UIAlertAction(title: "Add", style: .default, handler: nil)
+        let addAction = UIAlertAction(title: "Add", style: .default) { _ in
+            
+            // Grab text field tet
+            guard let name = alertController.textFields?.first?.text else { return }
+            
+            // Create task
+            let  newTask = Task(name: name)
+            
+            // Add task
+            self.taskStore.add(newTask, at: 0)
+            
+            // Reload data in table view
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
+            
+        }
+        
         addAction.isEnabled = false
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -62,10 +78,6 @@ class TasksController: UITableViewController {
 // MARK:  - DataSource
 extension TasksController {
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 54
-    }
-    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "To-Do" : "Done"
     }
@@ -83,5 +95,13 @@ extension TasksController {
         cell.textLabel?.text = taskStore.tasks[indexPath.section][indexPath.row].name
         
         return cell
+    }
+}
+
+// MARK: - Delegate
+extension TasksController {
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 54
     }
 }
