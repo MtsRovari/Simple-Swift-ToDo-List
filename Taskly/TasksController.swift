@@ -116,7 +116,7 @@ extension TasksController {
             self.taskStore.removeTask(at: indexPath.row, isDone: isDone)
 
             // Reload table view
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
 
             // Indicate that the action was performed
             completionHandler(true)
@@ -129,7 +129,32 @@ extension TasksController {
     }
 
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let doneAction = UIContextualAction(style: .normal, title: nil) { (action, sourceView, completionHandler) in
+            
+            // Toggle that the task is done
+            self.taskStore.tasks[0][indexPath.row].isDone = true
+            
+            // Remove the task from the array containing todo tasks
+            let doneTask = self.taskStore.removeTask(at: indexPath.row)
+            
+            // Reload table view
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            // add the task to the array containing done tasks
+            self.taskStore.add(doneTask, at: 0, isDone: true)
+            
+            // Reload table view
+            tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+            
+            // Indicate the action was performed
+            completionHandler(true)
+            
+        }
+        
+        doneAction.image = UIImage(named: "done")
+        doneAction.backgroundColor = #colorLiteral(red: 0.01176470588, green: 0.7529411765, blue: 0.2901960784, alpha: 1)
 
-        return nil
+        return indexPath.section == 0 ? UISwipeActionsConfiguration(actions: [doneAction]) : nil
     }
 }
