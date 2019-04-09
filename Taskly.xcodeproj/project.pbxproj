@@ -39,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46326348225C411E00953714 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46805F76223FB714000B85AF /* Task.swift */,
+			);
+			name = Models;
+			path = "New Groupod";
+			sourceTree = "<group>";
+		};
+		46326349225C413A00953714 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				463D45A3223F406C001D598D /* TasksController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4632634A225C414000953714 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				46805F78223FB7E6000B85AF /* TaskStore.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4632634B225C415000953714 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				463D4591223F3F40001D598D /* AppDelegate.swift */,
+				463D4598223F3F42001D598D /* Assets.xcassets */,
+				463D459A223F3F42001D598D /* LaunchScreen.storyboard */,
+				463D459D223F3F42001D598D /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		463D4585223F3F40001D598D = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +94,11 @@
 		463D4590223F3F40001D598D /* Taskly */ = {
 			isa = PBXGroup;
 			children = (
-				463D4591223F3F40001D598D /* AppDelegate.swift */,
+				4632634B225C415000953714 /* System */,
+				4632634A225C414000953714 /* Helpers */,
+				46326349225C413A00953714 /* Controllers */,
+				46326348225C411E00953714 /* Models */,
 				463D4595223F3F40001D598D /* Main.storyboard */,
-				463D4598223F3F42001D598D /* Assets.xcassets */,
-				463D459A223F3F42001D598D /* LaunchScreen.storyboard */,
-				463D459D223F3F42001D598D /* Info.plist */,
-				463D45A3223F406C001D598D /* TasksController.swift */,
-				46805F76223FB714000B85AF /* Task.swift */,
-				46805F78223FB7E6000B85AF /* TaskStore.swift */,
 			);
 			path = Taskly;
 			sourceTree = "<group>";
