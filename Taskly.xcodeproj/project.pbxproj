@@ -94,11 +94,11 @@
 		463D4590223F3F40001D598D /* Taskly */ = {
 			isa = PBXGroup;
 			children = (
-				4632634B225C415000953714 /* System */,
-				4632634A225C414000953714 /* Helpers */,
-				46326349225C413A00953714 /* Controllers */,
-				46326348225C411E00953714 /* Models */,
 				463D4595223F3F40001D598D /* Main.storyboard */,
+				46326348225C411E00953714 /* Models */,
+				46326349225C413A00953714 /* Controllers */,
+				4632634A225C414000953714 /* Helpers */,
+				4632634B225C415000953714 /* System */,
 			);
 			path = Taskly;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59GRW5GVS;
-				INFOPLIST_FILE = Taskly/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Taskly/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59GRW5GVS;
-				INFOPLIST_FILE = Taskly/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Taskly/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
