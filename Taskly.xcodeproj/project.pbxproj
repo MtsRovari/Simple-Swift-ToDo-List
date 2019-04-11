@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461671C6225EE23400D1F4FB /* TasksUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461671C5225EE23400D1F4FB /* TasksUtility.swift */; };
 		463D4592223F3F40001D598D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D4591223F3F40001D598D /* AppDelegate.swift */; };
 		463D4597223F3F40001D598D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463D4595223F3F40001D598D /* Main.storyboard */; };
 		463D4599223F3F42001D598D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463D4598223F3F42001D598D /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461671C5225EE23400D1F4FB /* TasksUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksUtility.swift; sourceTree = "<group>"; };
 		463D458E223F3F40001D598D /* Taskly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		463D4591223F3F40001D598D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		463D4596223F3F40001D598D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				46805F78223FB7E6000B85AF /* TaskStore.swift */,
+				461671C5225EE23400D1F4FB /* TasksUtility.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				463D45A4223F406C001D598D /* TasksController.swift in Sources */,
 				46805F77223FB714000B85AF /* Task.swift in Sources */,
 				46805F79223FB7E6000B85AF /* TaskStore.swift in Sources */,
+				461671C6225EE23400D1F4FB /* TasksUtility.swift in Sources */,
 				463D4592223F3F40001D598D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
