@@ -10,7 +10,15 @@ import UIKit
 
 class TasksController: UITableViewController {
     
-    var taskStore: TaskStore!
+    var taskStore: TaskStore! {
+        didSet {
+            // Get data
+            taskStore.tasks = TasksUtility.fetch() ?? [[Task](),  [Task]()]
+            
+            // Reaload table view
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
