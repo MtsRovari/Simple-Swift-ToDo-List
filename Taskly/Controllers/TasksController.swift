@@ -20,8 +20,11 @@ class TasksController: UITableViewController {
         }
     }
     
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView();
     }
     
     
